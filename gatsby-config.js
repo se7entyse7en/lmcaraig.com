@@ -8,4 +8,21 @@ module.exports = {
       company: `source{d}`,
     }
   },
+  plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/content/posts/`,
+      },
+    },
+    `gatsby-transformer-remark`,
+  ],
 }
