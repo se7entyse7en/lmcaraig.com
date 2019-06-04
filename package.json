@@ -19,6 +19,8 @@
     "@fortawesome/free-solid-svg-icons": "^5.8.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "gatsby": "^2.3.32",
+    "gatsby-source-filesystem": "^2.0.38",
+    "gatsby-transformer-remark": "^2.3.12",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
