@@ -31,8 +31,8 @@ export default ({data}) => {
         </div>
 
       </div>
-    </LayoutWithDefaultProps>
 
+    </LayoutWithDefaultProps>
   )
 }
 
