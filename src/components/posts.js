@@ -28,7 +28,7 @@ export default props => {
   )
 
   return (
-    <div className="container mt-5">
+    <div className="container">
       {
         data.allMarkdownRemark.edges.map(
           ({node}) => <PostItem key={node.id} timeToRead={node.timeToRead}

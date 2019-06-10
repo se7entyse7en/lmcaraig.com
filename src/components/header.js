@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
 export default props => (
-  <div className="container">
+  <div className="container mb-5">
     <HeaderPicture picture={props.picture} />
     <HeaderHeadline name={props.name} position={props.position} company={props.company} />
     <HeaderContacts icons={props.icons} />
