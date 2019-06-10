@@ -6,17 +6,22 @@ export default props => {
   const data = useStaticQuery(
     graphql`
       query {
-        allMarkdownRemark {
+        allFile(filter: {sourceInstanceName: {eq: "posts"}}) {
           edges {
             node {
-              id
-              frontmatter {
-                title
-                formattedDate: date(formatString: "D MMMM YYYY")
-                diffDays: date(difference: "days")
+              childMarkdownRemark {
+                id
+                frontmatter {
+                  title
+                  formattedDate: date(formatString: "D MMMM YYYY")
+                  diffDays: date(difference: "days")
+                }
+                fields {
+                  slug
+                }
+                excerpt
+                timeToRead
               }
-              excerpt
-              timeToRead
             }
           }
         }
@@ -25,13 +30,19 @@ export default props => {
   )
 
   return (
-    <div className="container mt-5">
+    <div className="container">
       {
-        data.allMarkdownRemark.edges.map(
-          ({node}) => <PostItem key={node.id} timeToRead={node.timeToRead}
-                             frontmatter={node.frontmatter}
-                             excerpt={node.excerpt}>
-                    </PostItem>
+        data.allFile.edges.map(
+          ({node}) => {
+            const data = node.childMarkdownRemark
+            return (
+              <PostItem key={data.id} timeToRead={data.timeToRead}
+                        frontmatter={data.frontmatter}
+                        excerpt={data.excerpt}
+                        link={data.fields.slug}>
+              </PostItem>
+            )
+          }
         )
       }
     </div>
@@ -47,7 +58,7 @@ const PostItem = (props) => {
         <div className="card border-0">
           <div className="card-body">
             <p className="card-subtitle text-secondary">{props.frontmatter.formattedDate} - {props.frontmatter.diffDays} days ago</p>
-            <Link to="/"><h5 className="card-title text-dark">{props.frontmatter.title}</h5></Link>
+            <Link to={props.link}><h5 className="card-title text-dark">{props.frontmatter.title}</h5></Link>
             <p className="card-subtitle text-secondary">~ {props.timeToRead} {readingTimeUnitString} read</p>
             <p className="card-text">{props.excerpt}</p>
           </div>
