@@ -1,11 +1,10 @@
 import React from "react"
-import Navbar from "../components/navbar"
+import Layout from "../components/layout"
 
 export default ({data}) => (
-  <React.Fragment>
-    <Navbar></Navbar>
+  <Layout withNavbar={true}>
     <div className="container">
       <p>It's me!</p>
     </div>
-  </React.Fragment>
+  </Layout>
 )
