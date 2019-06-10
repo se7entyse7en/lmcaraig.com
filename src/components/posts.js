@@ -15,6 +15,9 @@ export default props => {
                 formattedDate: date(formatString: "D MMMM YYYY")
                 diffDays: date(difference: "days")
               }
+              fields {
+                slug
+              }
               excerpt
               timeToRead
             }
@@ -29,8 +32,9 @@ export default props => {
       {
         data.allMarkdownRemark.edges.map(
           ({node}) => <PostItem key={node.id} timeToRead={node.timeToRead}
-                             frontmatter={node.frontmatter}
-                             excerpt={node.excerpt}>
+                                frontmatter={node.frontmatter}
+                                excerpt={node.excerpt}
+                                link={node.fields.slug}>
                     </PostItem>
         )
       }
@@ -47,7 +51,7 @@ const PostItem = (props) => {
         <div className="card border-0">
           <div className="card-body">
             <p className="card-subtitle text-secondary">{props.frontmatter.formattedDate} - {props.frontmatter.diffDays} days ago</p>
-            <Link to="/"><h5 className="card-title text-dark">{props.frontmatter.title}</h5></Link>
+            <Link to={props.link}><h5 className="card-title text-dark">{props.frontmatter.title}</h5></Link>
             <p className="card-subtitle text-secondary">~ {props.timeToRead} {readingTimeUnitString} read</p>
             <p className="card-text">{props.excerpt}</p>
           </div>
