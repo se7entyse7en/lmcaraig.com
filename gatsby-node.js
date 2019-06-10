@@ -18,25 +18,27 @@ exports.createPages = ({ graphql, actions }) => {
 
   return graphql(`
     {
-      allMarkdownRemark {
+      allFile(filter: {sourceInstanceName: {eq: "posts"}}) {
         edges {
           node {
-            fields {
-              slug
+            childMarkdownRemark {
+              fields {
+                slug
+              }
             }
           }
         }
       }
     }
   `).then(result => {
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    result.data.allFile.edges.forEach(({ node }) => {
       createPage({
-        path: node.fields.slug,
+        path: node.childMarkdownRemark.fields.slug,
         component: path.resolve(`./src/templates/post.js`),
         context: {
           // Data passed to context is available
           // in page queries as GraphQL variables.
-          slug: node.fields.slug,
+          slug: node.childMarkdownRemark.fields.slug,
         },
       })
     })
