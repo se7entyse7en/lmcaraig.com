@@ -6,20 +6,22 @@ export default props => {
   const data = useStaticQuery(
     graphql`
       query {
-        allMarkdownRemark {
+        allFile(filter: {sourceInstanceName: {eq: "posts"}}) {
           edges {
             node {
-              id
-              frontmatter {
-                title
-                formattedDate: date(formatString: "D MMMM YYYY")
-                diffDays: date(difference: "days")
+              childMarkdownRemark {
+                id
+                frontmatter {
+                  title
+                  formattedDate: date(formatString: "D MMMM YYYY")
+                  diffDays: date(difference: "days")
+                }
+                fields {
+                  slug
+                }
+                excerpt
+                timeToRead
               }
-              fields {
-                slug
-              }
-              excerpt
-              timeToRead
             }
           }
         }
@@ -30,12 +32,17 @@ export default props => {
   return (
     <div className="container">
       {
-        data.allMarkdownRemark.edges.map(
-          ({node}) => <PostItem key={node.id} timeToRead={node.timeToRead}
-                                frontmatter={node.frontmatter}
-                                excerpt={node.excerpt}
-                                link={node.fields.slug}>
-                    </PostItem>
+        data.allFile.edges.map(
+          ({node}) => {
+            const data = node.childMarkdownRemark
+            return (
+              <PostItem key={data.id} timeToRead={data.timeToRead}
+                        frontmatter={data.frontmatter}
+                        excerpt={data.excerpt}
+                        link={data.fields.slug}>
+              </PostItem>
+            )
+          }
         )
       }
     </div>
