@@ -12,7 +12,7 @@ export default props => (
 )
 
 const HeaderPicture = (props) => (
-    <div className="row mt-2 mt-sm-5">
+    <div className="row">
       <div className="col"></div>
       <div className="col-4 col-sm-2">
         <img src={props.picture} alt="close-up" className="img-fluid rounded-circle" />
