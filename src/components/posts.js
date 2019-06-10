@@ -54,7 +54,7 @@ const PostItem = (props) => {
   return (
     <div className="row">
       <div className="col"></div>
-      <div className="col-8 col-sm-8">
+      <div className="col-12 col-sm-8">
         <div className="card border-0">
           <div className="card-body">
             <p className="card-subtitle text-secondary">{props.frontmatter.formattedDate} - {props.frontmatter.diffDays} days ago</p>

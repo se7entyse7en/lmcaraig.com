@@ -14,7 +14,7 @@ export default ({data}) => {
 
         <div className="row mb-3">
           <div className="col"></div>
-          <div className="col-8 col-sm-8 text-center">
+          <div className="col-10 col-sm-8 text-center">
             <p className="card-subtitle text-secondary">{post.frontmatter.formattedDate} - {post.frontmatter.diffDays} days ago</p>
             <h1>{post.frontmatter.title}</h1>
             <p className="text-secondary">~ {post.timeToRead} {readingTimeUnitString} read</p>
@@ -24,7 +24,7 @@ export default ({data}) => {
 
         <div className="row">
           <div className="col"></div>
-          <div className="col-8 col-sm-8">
+          <div className="col-10 col-sm-8">
             <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
           </div>
           <div className="col"></div>
