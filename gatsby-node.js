@@ -18,7 +18,7 @@ exports.createPages = ({ graphql, actions }) => {
 
   return graphql(`
     {
-      allFile(filter: {sourceInstanceName: {eq: "posts"}}) {
+      allFile(filter: {sourceInstanceName: {eq: "posts"}, ext: {eq: ".md"}}) {
         edges {
           node {
             childMarkdownRemark {
