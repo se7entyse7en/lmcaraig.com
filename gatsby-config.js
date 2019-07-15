@@ -9,6 +9,7 @@ module.exports = {
     }
   },
   plugins: [
+    'gatsby-plugin-sharp',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -30,6 +31,19 @@ module.exports = {
         path: `${__dirname}/content/extra/`,
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 970,
+              wrapperStyle: `height: 100%;`
+            },
+          },
+        ],
+      },
+    },
   ],
 }
