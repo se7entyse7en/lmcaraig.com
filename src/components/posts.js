@@ -35,11 +35,12 @@ export default props => {
         data.allFile.edges.map(
           ({node}) => {
             const data = node.childMarkdownRemark
+            const slug = data.fields.slug
             return (
               <PostItem key={data.id} timeToRead={data.timeToRead}
                         frontmatter={data.frontmatter}
                         excerpt={data.excerpt}
-                        link={data.fields.slug}>
+                        link={slug.slice(0, slug.slice(1, slug.length).indexOf('/') + 1)}>
               </PostItem>
             )
           }
