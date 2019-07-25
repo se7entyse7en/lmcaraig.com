@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import { LayoutWithDefaultProps } from "../components/layout"
+import Toc  from "../components/toc"
 
 
 export default ({data}) => {
@@ -25,10 +26,20 @@ export default ({data}) => {
         <div className="row">
           <div className="col"></div>
           <div className="col-10 col-sm-8">
+            <Toc htmlAst={post.htmlAst} enableAnchors={true}></Toc>
+          </div>
+          <div className="col"></div>
+        </div>
+
+        <div className="row">
+          <div className="col"></div>
+          <div className="col-10 col-sm-8">
             <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
           </div>
           <div className="col"></div>
         </div>
+
+        <div className="col"></div>
 
       </div>
 
@@ -40,6 +51,7 @@ export const query = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      htmlAst
       frontmatter {
         title
         formattedDate: date(formatString: "D MMMM YYYY")
