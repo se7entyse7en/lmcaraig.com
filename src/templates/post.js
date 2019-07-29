@@ -26,7 +26,7 @@ export default ({data}) => {
         <div className="row">
           <div className="col"></div>
           <div className="col-10 col-sm-8">
-            <Toc htmlAst={post.htmlAst} enableAnchors={true}></Toc>
+            <Toc htmlAst={post.htmlAst} enableAnchors={false}></Toc>
           </div>
           <div className="col"></div>
         </div>
