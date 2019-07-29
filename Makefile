@@ -5,4 +5,4 @@ publish-beta: build
 	surge public beta.lmcaraig.com
 
 publish: build
-	surge public beta.lmcaraig.com
+	surge public lmcaraig.com
