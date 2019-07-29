@@ -6,7 +6,7 @@ export default props => {
   const data = useStaticQuery(
     graphql`
       query {
-        allFile(filter: {sourceInstanceName: {eq: "posts"}}) {
+        allFile(filter: {sourceInstanceName: {eq: "posts"}, ext: {eq: ".md"}}, sort: {order: DESC, fields: [childMarkdownRemark___frontmatter___date]}) {
           edges {
             node {
               childMarkdownRemark {
@@ -19,7 +19,7 @@ export default props => {
                 fields {
                   slug
                 }
-                excerpt
+                excerpt(pruneLength: 300)
                 timeToRead
               }
             }
@@ -30,16 +30,17 @@ export default props => {
   )
 
   return (
-    <div className="container">
+    <div className="container mb-5">
       {
         data.allFile.edges.map(
           ({node}) => {
             const data = node.childMarkdownRemark
+            const slug = data.fields.slug
             return (
               <PostItem key={data.id} timeToRead={data.timeToRead}
                         frontmatter={data.frontmatter}
                         excerpt={data.excerpt}
-                        link={data.fields.slug}>
+                        link={slug.slice(0, slug.slice(1, slug.length).indexOf('/') + 1)}>
               </PostItem>
             )
           }

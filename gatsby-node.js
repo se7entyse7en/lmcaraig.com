@@ -18,7 +18,7 @@ exports.createPages = ({ graphql, actions }) => {
 
   return graphql(`
     {
-      allFile(filter: {sourceInstanceName: {eq: "posts"}}) {
+      allFile(filter: {sourceInstanceName: {eq: "posts"}, ext: {eq: ".md"}}) {
         edges {
           node {
             childMarkdownRemark {
@@ -32,8 +32,9 @@ exports.createPages = ({ graphql, actions }) => {
     }
   `).then(result => {
     result.data.allFile.edges.forEach(({ node }) => {
+      const slug = node.childMarkdownRemark.fields.slug
       createPage({
-        path: node.childMarkdownRemark.fields.slug,
+        path: slug.slice(0, slug.slice(1, slug.length).indexOf('/') + 1),
         component: path.resolve(`./src/templates/post.js`),
         context: {
           // Data passed to context is available
