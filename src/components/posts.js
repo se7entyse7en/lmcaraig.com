@@ -6,7 +6,7 @@ export default props => {
   const data = useStaticQuery(
     graphql`
       query {
-        allFile(filter: {sourceInstanceName: {eq: "posts"}, ext: {eq: ".md"}}) {
+        allFile(filter: {sourceInstanceName: {eq: "posts"}, ext: {eq: ".md"}}, sort: {order: DESC, fields: [childMarkdownRemark___frontmatter___date]}) {
           edges {
             node {
               childMarkdownRemark {
