@@ -2,6 +2,4 @@
   lmcaraig.com
 </h1>
 
-Source code of my blog available at:
-- [lmcaraig.com](http://lmcaraig.com)
-- [beta.lmcaraig.com](http://beta.lmcaraig.com) (_development version_)
+Blog live at [lmcaraig.com](https://lmcaraig.com)
