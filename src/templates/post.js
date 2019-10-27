@@ -22,7 +22,7 @@ export default ({data}) => {
         <div className="row mb-3">
           <div className="col"></div>
           <div className="col-10 col-sm-8 text-center">
-            <p className="card-subtitle text-secondary">{post.frontmatter.formattedDate} - {post.frontmatter.diffDays} days ago</p>
+            <p className="card-subtitle text-secondary">{post.frontmatter.formattedDate}</p>
             <h1>{post.frontmatter.title}</h1>
             <p className="text-secondary">~ {post.timeToRead} {readingTimeUnitString} read</p>
           </div>
@@ -70,7 +70,6 @@ export const query = graphql`
         title
         hackerNewsId
         formattedDate: date(formatString: "D MMMM YYYY")
-        diffDays: date(difference: "days")
       }
       timeToRead
     }

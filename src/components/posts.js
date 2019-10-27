@@ -14,7 +14,6 @@ export default props => {
                 frontmatter {
                   title
                   formattedDate: date(formatString: "D MMMM YYYY")
-                  diffDays: date(difference: "days")
                 }
                 fields {
                   slug
@@ -58,7 +57,7 @@ const PostItem = (props) => {
       <div className="col-12 col-sm-8">
         <div className="card border-0">
           <div className="card-body">
-            <p className="card-subtitle text-secondary">{props.frontmatter.formattedDate} - {props.frontmatter.diffDays} days ago</p>
+            <p className="card-subtitle text-secondary">{props.frontmatter.formattedDate}</p>
             <Link to={props.link}><h5 className="card-title text-dark">{props.frontmatter.title}</h5></Link>
             <p className="card-subtitle text-secondary">~ {props.timeToRead} {readingTimeUnitString} read</p>
             <p className="card-text">{props.excerpt}</p>
