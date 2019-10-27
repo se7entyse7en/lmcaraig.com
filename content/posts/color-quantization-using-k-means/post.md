@@ -4,7 +4,9 @@ date: "2017-02-04"
 hackerNewsId: 13567188
 ---
 
+<!--BEGIN INTRO-->
 In this article, I'd like to talk about color quantization and how the k-means clustering algorithm can be used to perform it and how it performs compared to simpler methods. The snippets presented here are written in Python and come from this [project](https://github.com/se7entyse7en/image-quantizer).
+<!--END INTRO-->
 
 ## What is color quantization?
 
