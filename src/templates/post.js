@@ -11,9 +11,21 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
 
+const INTRO_BEGIN_MARKER = "<!--BEGIN INTRO-->"
+const INTRO_END_MARKER = "<!--END INTRO-->"
+
 export default ({data}) => {
-  const post = data.markdownRemark
-  const readingTimeUnitString = post.timeToRead > 1? "mins" : "min"
+  const post = data.markdownRemark;
+  const readingTimeUnitString = post.timeToRead > 1? "mins" : "min";
+
+  const introHtml = post.html.substring(
+    post.html.lastIndexOf(INTRO_BEGIN_MARKER) + INTRO_BEGIN_MARKER.length,
+    post.html.lastIndexOf(INTRO_END_MARKER)
+  );
+
+  const bodyHtml = post.html.substring(
+    post.html.lastIndexOf(INTRO_END_MARKER) + INTRO_END_MARKER.length)
+
   return (
     <LayoutWithDefaultProps withNavbar={true} withHeader={true}>
 
@@ -29,6 +41,14 @@ export default ({data}) => {
           <div className="col"></div>
         </div>
 
+        <div className="row mb-3">
+          <div className="col"></div>
+          <div className="col-10 col-sm-8">
+            <div dangerouslySetInnerHTML={{ __html: introHtml }}></div>
+          </div>
+          <div className="col"></div>
+        </div>
+
         <div className="row">
           <div className="col"></div>
           <div className="col-10 col-sm-8">
@@ -40,7 +60,7 @@ export default ({data}) => {
         <div className="row">
           <div className="col"></div>
           <div className="col-10 col-sm-8">
-            <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
+            <div dangerouslySetInnerHTML={{ __html: bodyHtml }}></div>
           </div>
           <div className="col"></div>
         </div>
