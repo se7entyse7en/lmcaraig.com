@@ -3,13 +3,11 @@ import { graphql } from "gatsby"
 
 import { LayoutWithDefaultProps } from "../components/layout"
 
-export default ({data}) => {
+export default ({ data }) => {
   const node = data.allMarkdownRemark.edges[0].node
   return (
     <LayoutWithDefaultProps withNavbar={true} withHeader={false}>
-
       <div className="container">
-
         <div className="row mb-3">
           <div className="col"></div>
           <div className="col-10 col-sm-8 text-center">
@@ -25,18 +23,14 @@ export default ({data}) => {
           </div>
           <div className="col"></div>
         </div>
-
       </div>
-
     </LayoutWithDefaultProps>
   )
 }
 
-
-
 export const query = graphql`
   query {
-    allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/about.md/"}}) {
+    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/about.md/" } }) {
       edges {
         node {
           html

@@ -4,7 +4,9 @@ date: "2018-12-28"
 hackerNewsId: 16019866
 ---
 
+<!--BEGIN INTRO-->
 In this post, I want to explore what is an image histogram, how it is useful to understand an image and how it can be calculated using [OpenCV](https://opencv.org/) which is *de facto* the standard tool for **computer vision**. In this post, I'm going to use OpenCV 3 with Python 3.6.
+<!--END INTRO-->
 
 ## What is an image histogram?
 
