@@ -9,6 +9,17 @@ module.exports = {
     }
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Lou Marvin Caraig - Blog`,
+        short_name: `Lou Marvin Caraig - Blog`,
+        start_url: `/`,
+        display: `standalone`,
+        icon: `static/favicon.jpeg`,
+        crossOrigin: `use-credentials`,
+      },
+    },
     'gatsby-plugin-sharp',
     {
       resolve: `gatsby-source-filesystem`,
