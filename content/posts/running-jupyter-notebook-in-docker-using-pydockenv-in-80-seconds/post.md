@@ -1,7 +1,7 @@
 ---
 title: "Running Jupyter Notebook in Docker using pydockenv in 80 seconds"
 date: "2019-11-04"
-hackerNewsId: 0
+hackerNewsId: 21440801
 ---
 
 <!--BEGIN INTRO-->
