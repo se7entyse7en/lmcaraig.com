@@ -4,7 +4,7 @@ module.exports = {
     siteUrl: `https://lmcaraig.com`,
     header: {
       name: `Lou Marvin Caraig`,
-      position: `Software Development Engineer`,
+      position: `Senior Software Development Engineer`,
       company: `source{d}`,
     }
   },
