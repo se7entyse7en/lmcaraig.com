@@ -4,8 +4,8 @@ module.exports = {
     siteUrl: `https://lmcaraig.com`,
     header: {
       name: `Lou Marvin Caraig`,
-      position: `Senior Software Development Engineer`,
-      company: `source{d}`,
+      position: `Engineering Team Lead`,
+      company: `Athenian`,
     }
   },
   plugins: [
