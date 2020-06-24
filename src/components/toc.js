@@ -41,10 +41,23 @@ export default props => {
       return false
     })
     .map(function(elem) {
+      const text = elem.children.slice(1).reduce(function(currentText, ch) {
+        let text
+        if (ch.type === "text") {
+          text = ch.value
+        } else if (ch.type === "element" && ch.tagName === "code") {
+          text = "`" + ch.children[0].value + "`"
+        } else {
+          throw new Error("Invalid heading")
+        }
+
+        return currentText + text
+      }, "")
+
       return {
         level: parseInt(elem.tagName[1]),
         anchor: elem.children[0].properties.href,
-        text: elem.children[1].value,
+        text: text,
       }
     })
 

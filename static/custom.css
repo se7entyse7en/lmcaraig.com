@@ -1,0 +1,8 @@
+blockquote {
+    font-size: 90%;
+    font-style: italic;
+    background: #e4f1fe;
+    margin: 15px 0;
+    padding: 1em 3em;
+    border-radius: 5px;
+}
