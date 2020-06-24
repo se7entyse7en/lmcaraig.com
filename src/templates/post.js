@@ -67,28 +67,30 @@ export default ({ data }) => {
           <div className="col"></div>
         </div>
 
-        <div className="row mb-3 mt-3 text-right">
-          <div className="col"></div>
-          <div className="col-10 col-sm-8">
-            <a
-              className="text-dark"
-              href={
-                "https://news.ycombinator.com/item?id=" +
-                post.frontmatter.hackerNewsId
-              }
-            >
-              <h6>
-                <FontAwesomeIcon
-                  className="mx-1"
-                  icon={fab.faHackerNewsSquare}
-                  size="lg"
-                />
-                <i>See comments on HackerNews</i>
-              </h6>
-            </a>
-          </div>
-          <div className="col"></div>
-        </div>
+        {post.frontmatter.hackerNewsId !== 0 &&
+         <div className="row mb-3 mt-3 text-right">
+           <div className="col"></div>
+           <div className="col-10 col-sm-8">
+             <a
+               className="text-dark"
+               href={
+                 "https://news.ycombinator.com/item?id=" +
+                   post.frontmatter.hackerNewsId
+               }
+             >
+               <h6>
+                 <FontAwesomeIcon
+                   className="mx-1"
+                   icon={fab.faHackerNewsSquare}
+                   size="lg"
+                 />
+                 <i>See comments on HackerNews</i>
+               </h6>
+             </a>
+           </div>
+           <div className="col"></div>
+         </div>}
+
       </div>
     </LayoutWithDefaultProps>
   )
