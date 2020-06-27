@@ -23,6 +23,7 @@
     "gatsby": "^2.22.15",
     "gatsby-plugin-google-analytics": "^2.3.2",
     "gatsby-plugin-manifest": "^2.4.9",
+    "gatsby-plugin-react-helmet": "^3.3.6",
     "gatsby-plugin-sharp": "^2.6.9",
     "gatsby-remark-autolink-headers": "^2.3.3",
     "gatsby-remark-emoji": "0.0.3",
@@ -36,6 +37,7 @@
     "prismjs": "^1.16.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-helmet": "^6.1.0",
     "snyk": "^1.346.0"
   },
   "devDependencies": {

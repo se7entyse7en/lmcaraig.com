@@ -2,6 +2,7 @@
 title: "Color quantization using k-means"
 date: "2017-02-04"
 hackerNewsId: 13567188
+description: "In this article, I'll talk about color quantization and how the k-means clustering algorithm can be used to perform it and how it performs compared to simpler methods."
 ---
 
 <!--BEGIN INTRO-->

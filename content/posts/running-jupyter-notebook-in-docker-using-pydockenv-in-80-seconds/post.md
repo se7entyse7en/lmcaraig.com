@@ -2,6 +2,7 @@
 title: "Running Jupyter Notebook in Docker using pydockenv in 80 seconds"
 date: "2019-11-04"
 hackerNewsId: 21440801
+description: "Pydockenv is tool to create Python virtual environments power by Docker. In this post it will be shown how to use it to run a Jupyter Notebook in 80 seconds"
 ---
 
 <!--BEGIN INTRO-->
@@ -23,7 +24,7 @@ But let's proceed in order.
 
 `pydockenv` is a project which is currently in *alpha* stage whose goal is to give the same experience of using virtual environments, but backed by Docker. So each python environment will actually correspond to a Docker container, and can be defined by using a `.toml` file. At time of writing it's compatible only with Python >=3.6.
 
-For our purpose, we're actually only interested in how to install it and how to create the environment that will run our Jupyter Notebook. For a more detailed overview, you can have a look [here](https://github.com/se7entyse7en/pydockenv).
+For our purpose, we're actually only interested in how to install it and how to create the environment that will run our Jupyter Notebook. You can have a look at the [home page of the project](https://github.com/se7entyse7en/pydockenv).
 
 ### Installation
 

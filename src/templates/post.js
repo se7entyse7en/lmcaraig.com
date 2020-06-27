@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import { LayoutWithDefaultProps } from "../components/layout"
 import Toc from "../components/toc"
+import SEO from "../components/seo"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 // this ensures that the icon CSS is loaded immediately before attempting to render icons
@@ -28,6 +29,11 @@ export default ({ data }) => {
 
   return (
     <LayoutWithDefaultProps withNavbar={true} withHeader={true}>
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.description}
+        article={true}
+      />
       <div className="container">
         <div className="row mb-3">
           <div className="col"></div>
@@ -105,6 +111,7 @@ export const query = graphql`
         title
         hackerNewsId
         formattedDate: date(formatString: "D MMMM YYYY")
+        description
       }
       timeToRead
     }

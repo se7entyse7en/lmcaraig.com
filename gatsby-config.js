@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Lou Marvin Caraig - Blog`,
     siteUrl: `https://lmcaraig.com`,
+    description: `Personal blog of Lou Marvin Caraig `,
     header: {
       name: `Lou Marvin Caraig`,
       position: `Engineering Team Lead`,
@@ -9,6 +10,7 @@ module.exports = {
     }
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
