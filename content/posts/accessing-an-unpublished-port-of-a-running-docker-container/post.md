@@ -2,6 +2,7 @@
 title: "Accessing an unpublished port of a running Docker container"
 date: "2020-06-24"
 hackerNewsId: 23634497
+description: "In this post, I'm gonna show how different solutions accessing an unpublished port of a running Docker container could be applied depending on whether restarting the container is an option or not."
 ---
 
 <!--BEGIN INTRO-->
@@ -21,7 +22,7 @@ By default Docker containers are completely isolated from the host, this means t
 
 One important thing to keep in mind is to understand the difference between an **exposed** port and a **published** one.
 
-A port can be exposed either using the `--expose` flag when running `docker run` or by using the `EXPOSE` command in a `Dockerfile`. Exposing a port actually does nothing with regard to networking and it should be interpreted as a way of documenting the ports used by the container. Indeed it's a good practice in a `Dockferfile` to show what are the ports that are used by the container by exposing them. [Here](https://github.com/docker-library/redis/blob/master/Dockerfile.template) you can see for example the `Dockerfile` for Redis that exposes port `6379`.
+A port can be exposed either using the `--expose` flag when running `docker run` or by using the `EXPOSE` command in a `Dockerfile`. Exposing a port actually does nothing with regard to networking and it should be interpreted as a way of documenting the ports used by the container. Indeed it's a good practice in a `Dockferfile` to show what are the ports that are used by the container by exposing them. As an example, checkout [the `Dockerfile` for Redis](https://github.com/docker-library/redis/blob/master/Dockerfile.template) that exposes port `6379`.
 
 So if we run a container with Redis without mapping it to any port, we can see that we cannot reach it from the host even if in the `Dockerfile` it is marked as exposed. One thing to be noted is that a container’s port is not accessible by the host, but it is accessible by other containers running in the **same network**.
 

@@ -2,6 +2,7 @@
 title: "Understanding image histograms with OpenCV"
 date: "2018-12-28"
 hackerNewsId: 16019866
+description: "In this post, I want to explore what is an image histogram, how it is useful to understand an image and how it can be calculated using OpenCV which is de facto the standard tool for computer vision."
 ---
 
 <!--BEGIN INTRO-->
@@ -10,7 +11,7 @@ In this post, I want to explore what is an image histogram, how it is useful to 
 
 ## What is an image histogram?
 
-A **histogram** is a graph or a plot that represents the distribution of the pixel intensities in an image. In this post, we're going to focus on the RGB color space (see [here](color-quantization-using-k-means) if you want an explanation about the difference between some color spaces such as RGB and Lab), hence the intensity of a pixel is in the range $[0, 255]$. When plotting the histogram we have the pixel intensity in the X-axis and the frequency in the Y-axis. As with any other histogram, we can decide how many bins to use.
+A **histogram** is a graph or a plot that represents the distribution of the pixel intensities in an image. In this post, we're going to focus on the RGB color space, hence the intensity of a pixel is in the range $[0, 255]$. When plotting the histogram we have the pixel intensity in the X-axis and the frequency in the Y-axis. As with any other histogram, we can decide how many bins to use.
 
 A histogram can be calculated both for the grayscale image and for the colored image. In the first case we have a single channel, hence a single histogram. In the second case we have three channels, hence three histograms.
 
