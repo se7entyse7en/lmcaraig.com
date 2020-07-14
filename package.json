@@ -38,7 +38,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
-    "snyk": "^1.346.0"
+    "snyk": "^1.347.1"
   },
   "devDependencies": {
     "prettier": "^1.17.0"
