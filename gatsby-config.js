@@ -5,7 +5,7 @@ module.exports = {
     description: `Personal blog of Lou Marvin Caraig `,
     header: {
       name: `Lou Marvin Caraig`,
-      position: `Engineering Team Lead`,
+      position: `Head of Engineering`,
       company: `Athenian`,
     }
   },
