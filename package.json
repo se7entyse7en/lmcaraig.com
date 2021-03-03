@@ -10,9 +10,7 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.18",
@@ -37,8 +35,7 @@
     "prismjs": "^1.16.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-helmet": "^6.1.0",
-    "snyk": "^1.346.0"
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
     "prettier": "^1.17.0"
@@ -49,6 +46,5 @@
   },
   "bugs": {
     "url": "https://github.com/se7entyse7en/lmcaraig.com/issues"
-  },
-  "snyk": true
+  }
 }
